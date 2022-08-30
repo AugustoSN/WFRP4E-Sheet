@@ -1,6 +1,6 @@
 extends Node
 
-#Creatures
+#Creatures List
 var creatures = { 0 : {
 	"Name": "Empty",
 	 ws_basic_value = 0,
