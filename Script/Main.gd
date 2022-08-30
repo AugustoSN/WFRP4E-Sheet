@@ -37,7 +37,7 @@ func _on_ItemList_item_selected(index):
 		button.connect("pressed", self, "Roll_Dices", [button.get_node(
 			"../Total"),button.get_node("../")])
 
-	
+#Dice rolling
 func Roll_Dices(t,n):
 	if $PanelContainer/Rolls/HBoxContainer/Roll.disabled == true:
 		sheet_size += 4
@@ -51,7 +51,9 @@ func Roll_Dices(t,n):
 		get_node(sheet_node).add_item("Dice : " + str(result) )
 		success_level()
 		get_node(sheet_node).add_item("SL : " + str(sl))
+		
 
+#Success Levels(SL) are macanics from the rpg
 func success_level():
 	var resultstr = str(result)
 	var resultlng = resultstr.length()
@@ -66,6 +68,7 @@ func success_level():
 			str(int(targetstr[targetlng-2])))) 
 	sl = tens_target - tens_dice
 
+# More tipes of test will be needed. Extended Test (save the SL and add to the next text), Dramatic Tests (SL need to be a specific number or above),etc. 
 func simple_test():
 	roll_d100()
 
@@ -77,7 +80,7 @@ func roll_d100():
 
 
 
-
+#'Change' the tab for sheet list to the rolling thest
 func _on_Roll_pressed():
 	$PanelContainer/Rolls/HBoxContainer/Sheet.disabled = false
 	$PanelContainer/Rolls/HBoxContainer/Roll.disabled = true
@@ -91,7 +94,7 @@ func _on_Roll_pressed():
 	sheet_size = 0
 
 
-
+#'Change' the tab for rolling to sheet list
 func _on_Sheet_button_up():
 	$PanelContainer/Rolls/HBoxContainer/Sheet.disabled = true
 	$PanelContainer/Rolls/HBoxContainer/Roll.disabled = false
