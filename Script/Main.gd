@@ -5,13 +5,13 @@ export var sheet_node: NodePath
 
 export var empty_sheet : PackedScene
 
-
+#Variables for dice rolling
 var result 
 var target
 var sl
 
 var sheet_size = 0
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 
 	load_sheet()
