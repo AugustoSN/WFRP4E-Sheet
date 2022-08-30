@@ -53,6 +53,7 @@ func _ready():
 	get_node(title_sheet).text = Global.creatures[creature_name].Name
 	teste = get_node(title_sheet).text 
 #updade basic Characteristics
+# Is weird like this because otherwise it will update all the open sheets
 	for total in get_node(characteristics_node).get_child_count():
 		get_node(characteristics_node).get_child(
 			total).get_child(1).text = str(Global.creatures[
@@ -66,8 +67,8 @@ func _ready():
 	for basic in get_tree().get_nodes_in_group("CharacteristicsBasic"):
 		basic.connect("text_changed",self,"Change_Characteristics",[basic.get_node('../BasicValue')] )
 		#get_node(skill_option).add_item(basic.get_node("../").name)
-#rect Window Dialog
 
+#resie Window Dialog
 	resize_area.rect_min_size = resize_area_vec2
 
 	resize_area.rect_position = $".".rect_size - (resize_area.rect_min_size / 2)
@@ -76,8 +77,9 @@ func _ready():
 	color_rect.rect_position = resize_area.rect_position
 	resize_area.connect('gui_input', self, 'mouse_drag_management')
 
-#Ban characters when editing Characteristics 
+
 func Change_Characteristics(new_text, t):
+#Ban characters when editing Characteristics. Cant' ban "[]" for some reason but i don't mind that
 	regex.compile("[{}:qwertyuiop´`asdfghjklçzxcvbnm<>,.:/?/*-+.!@#$%¨&*_=()]")
 	var result = regex.search(new_text)
 	var cached_caret_pos = t.caret_position
