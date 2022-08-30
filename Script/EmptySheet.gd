@@ -76,6 +76,7 @@ func _ready():
 	color_rect.rect_position = resize_area.rect_position
 	resize_area.connect('gui_input', self, 'mouse_drag_management')
 
+#Ban characters when editing Characteristics 
 func Change_Characteristics(new_text, t):
 	regex.compile("[{}:qwertyuiop´`asdfghjklçzxcvbnm<>,.:/?/*-+.!@#$%¨&*_=()]")
 	var result = regex.search(new_text)
@@ -108,7 +109,11 @@ func update_characteristics():
 				str(int(totalstr[totallng-2])))) 
 			
 		total.get_node('../Bonus').text = str(tens_total)
-#Skill
+#Skills. 
+#I was making the skills in the same scene before decidint to make it in to another. 
+#Both condes do the same thing and the last time i tested _on_OptionButton_item_selected(index) was working just fine. 
+#Don't know if it will work since the node is now in another scene
+# This conde still here just for me to see it what i've done previously. When i fix the SKill issue it will be deleted
 #func _on_OptionButton_item_selected(index):
 #	print(get_node(characteristics_node).get_node(str(get_node(
 #		skill_option).get_item_text(index)) +"/Total").text) 
@@ -123,12 +128,16 @@ func update_characteristics():
 #			get_node(skill_total).text = str(int(char_total + int(skill)))
 #			item_id -= 1
 #			pass
+
+#Close the sheet 
 func _on_Exit_pressed():
 	$".".queue_free()
 
+#Change the original name
 func _on_SheetName_text_changed(new_text):
 	get_node(title_sheet).text = new_text
 
+#"Minimize" sheet
 func _on_Minimize_pressed():
 	if minimized == false:
 		save_rect_x = $".".rect_size.x
@@ -145,10 +154,13 @@ func _on_Minimize_pressed():
 	resize_area.rect_position = $".".rect_size - (resize_area.rect_min_size / 2)
 	color_rect.rect_position = resize_area.rect_position
 
+# Drag the sheet on the screen.
+# The Painel Node was substituite with a Control Node  
 func _on_Panel_gui_input(event):
 	if event is InputEventScreenDrag:
 		rect_position += event.relative
 
+#Resize the sheet
 func mouse_drag_management(event):
 	if event is InputEventScreenDrag:
 		$".".rect_size = get_global_mouse_position()
@@ -157,7 +169,7 @@ func mouse_drag_management(event):
 #		DEBUG
 		color_rect.rect_position = resize_area.rect_position
 
-
+# Call skill
 func _on_Button_pressed():
 	var a = preload("res://Cenas/Sheets/Skill.tscn")
 	var i = a.instance()
