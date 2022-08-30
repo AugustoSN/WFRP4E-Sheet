@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Script/Skill.gd" type="Script" id=1]
+
+[node name="Skill" type="HBoxContainer"]
+margin_top = 18.0
+margin_right = 486.0
+margin_bottom = 58.0
+custom_constants/separation = 10
+script = ExtResource( 1 )
+skill_option = NodePath("OptionButton")
+skill_name = NodePath("Name")
+skill_advance = NodePath("Advance")
+skill_total = NodePath("Total")
+
+[node name="Name" type="Button" parent="."]
+margin_right = 80.0
+margin_bottom = 40.0
+text = "Skill Name"
+
+[node name="OptionButton" type="OptionButton" parent="."]
+margin_left = 90.0
+margin_right = 119.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 129.0
+margin_top = 13.0
+margin_right = 226.0
+margin_bottom = 27.0
+text = " Advance   =   "
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Advance" type="LineEdit" parent="."]
+margin_left = 236.0
+margin_right = 294.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 50, 40 )
+text = "587"
+align = 1
+max_length = 3
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 304.0
+margin_top = 13.0
+margin_right = 381.0
+margin_bottom = 27.0
+text = " Total   =   "
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Total" type="Label" parent="."]
+margin_left = 391.0
+margin_top = 13.0
+margin_right = 399.0
+margin_bottom = 27.0
+text = "0"
+align = 1
+valign = 1
+uppercase = true
+
+[connection signal="item_selected" from="OptionButton" to="." method="_on_OptionButton_item_selected"]

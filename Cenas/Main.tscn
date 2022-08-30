@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Script/Main.gd" type="Script" id=1]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+sheet_node = NodePath("PanelContainer/Rolls/Sheet List")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -250.0
+
+[node name="Rolls" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 243.0
+margin_bottom = 761.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/Rolls"]
+margin_right = 236.0
+margin_bottom = 20.0
+
+[node name="Roll" type="Button" parent="PanelContainer/Rolls/HBoxContainer"]
+margin_right = 69.0
+margin_bottom = 20.0
+text = "Rolagens"
+
+[node name="Sheet" type="Button" parent="PanelContainer/Rolls/HBoxContainer"]
+margin_left = 73.0
+margin_right = 177.0
+margin_bottom = 20.0
+disabled = true
+text = "Fichas Prontas"
+
+[node name="Sheet List" type="ItemList" parent="PanelContainer/Rolls"]
+margin_top = 24.0
+margin_right = 236.0
+margin_bottom = 754.0
+size_flags_vertical = 3
+allow_reselect = true
+
+[connection signal="pressed" from="PanelContainer/Rolls/HBoxContainer/Roll" to="." method="_on_Roll_pressed"]
+[connection signal="button_up" from="PanelContainer/Rolls/HBoxContainer/Sheet" to="." method="_on_Sheet_button_up"]

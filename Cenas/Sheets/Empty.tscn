@@ -1,0 +1,663 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Script/EmptySheet.gd" type="Script" id=1]
+
+[node name="Empty" type="Control"]
+anchor_right = 0.591912
+anchor_bottom = 0.574219
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+window = NodePath("WindowDialog")
+name_sheet = NodePath("WindowDialog/ScrollContainer/VBoxContainer/SheetName")
+title_sheet = NodePath("WindowDialog/HBoxContainer/Title")
+characteristics_node = NodePath("WindowDialog/ScrollContainer/VBoxContainer/Characteristics")
+sheet_node = NodePath("WindowDialog/ScrollContainer")
+
+[node name="WindowDialog" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WindowDialog"]
+anchor_right = 1.0
+anchor_bottom = 0.040568
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -20.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Title" type="Label" parent="WindowDialog/HBoxContainer"]
+margin_top = 3.0
+margin_right = 117.0
+margin_bottom = 17.0
+text = "asdasdasdadssdas"
+
+[node name="Panel" type="Control" parent="WindowDialog/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 121.0
+margin_right = 731.0
+margin_bottom = 20.0
+mouse_default_cursor_shape = 13
+size_flags_horizontal = 3
+
+[node name="Minimize" type="Button" parent="WindowDialog/HBoxContainer"]
+margin_left = 735.0
+margin_right = 752.0
+margin_bottom = 20.0
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Exit" type="Button" parent="WindowDialog/HBoxContainer"]
+margin_left = 756.0
+margin_right = 775.0
+margin_bottom = 20.0
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="WindowDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 40.0
+margin_right = -10.0
+margin_bottom = 10.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowDialog/ScrollContainer"]
+margin_right = 785.0
+margin_bottom = 411.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="SheetName" type="LineEdit" parent="WindowDialog/ScrollContainer/VBoxContainer"]
+margin_right = 785.0
+margin_bottom = 24.0
+
+[node name="Characteristics" type="HBoxContainer" parent="WindowDialog/ScrollContainer/VBoxContainer"]
+margin_top = 34.0
+margin_right = 785.0
+margin_bottom = 175.0
+size_flags_horizontal = 3
+custom_constants/separation = 5
+
+[node name="Names" type="VBoxContainer" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics"]
+margin_right = 94.0
+margin_bottom = 141.0
+size_flags_vertical = 3
+custom_constants/separation = 5
+
+[node name="Button" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Names"]
+margin_right = 94.0
+margin_bottom = 14.0
+text = "Characteristics"
+align = 1
+valign = 1
+
+[node name="BasicValue" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Names"]
+margin_top = 19.0
+margin_right = 94.0
+margin_bottom = 59.0
+rect_min_size = Vector2( 50, 40 )
+text = "Basic"
+align = 1
+valign = 1
+
+[node name="Advance" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Names"]
+margin_top = 64.0
+margin_right = 94.0
+margin_bottom = 78.0
+text = "Advance"
+align = 1
+
+[node name="Modifiers" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Names"]
+margin_top = 83.0
+margin_right = 94.0
+margin_bottom = 97.0
+text = "Modifier"
+align = 1
+
+[node name="Total" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Names"]
+margin_top = 102.0
+margin_right = 94.0
+margin_bottom = 116.0
+text = "Total"
+align = 1
+
+[node name="Bonus" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Names"]
+margin_top = 121.0
+margin_right = 94.0
+margin_bottom = 135.0
+text = "Bonus"
+align = 1
+
+[node name="WeaponSkill" type="VBoxContainer" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics"]
+margin_left = 99.0
+margin_right = 157.0
+margin_bottom = 141.0
+custom_constants/separation = 5
+
+[node name="Button" type="Button" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/WeaponSkill" groups=["Dices_Skills"]]
+margin_right = 58.0
+margin_bottom = 20.0
+text = "WS"
+
+[node name="BasicValue" type="LineEdit" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/WeaponSkill" groups=["CharacteristicsBasic"]]
+margin_top = 25.0
+margin_right = 58.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 50, 40 )
+text = "033"
+align = 1
+max_length = 3
+
+[node name="Advance" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/WeaponSkill"]
+margin_top = 70.0
+margin_right = 58.0
+margin_bottom = 84.0
+text = "0"
+align = 1
+
+[node name="Modifiers" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/WeaponSkill"]
+margin_top = 89.0
+margin_right = 58.0
+margin_bottom = 103.0
+text = "0"
+align = 1
+
+[node name="Total" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/WeaponSkill" groups=["CharacteristicsTotal"]]
+margin_top = 108.0
+margin_right = 58.0
+margin_bottom = 122.0
+text = "0"
+align = 1
+
+[node name="Bonus" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/WeaponSkill"]
+margin_top = 127.0
+margin_right = 58.0
+margin_bottom = 141.0
+text = "1"
+align = 1
+
+[node name="BallisticSkill" type="VBoxContainer" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics"]
+margin_left = 162.0
+margin_right = 220.0
+margin_bottom = 141.0
+custom_constants/separation = 5
+
+[node name="Button" type="Button" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/BallisticSkill" groups=["Dices_Skills"]]
+margin_right = 58.0
+margin_bottom = 20.0
+text = "BS"
+
+[node name="BasicValue" type="LineEdit" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/BallisticSkill" groups=["CharacteristicsBasic"]]
+margin_top = 25.0
+margin_right = 58.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 50, 40 )
+text = "033"
+align = 1
+max_length = 3
+
+[node name="Advance" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/BallisticSkill"]
+margin_top = 70.0
+margin_right = 58.0
+margin_bottom = 84.0
+text = "0"
+align = 1
+
+[node name="Modifiers" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/BallisticSkill"]
+margin_top = 89.0
+margin_right = 58.0
+margin_bottom = 103.0
+text = "0"
+align = 1
+
+[node name="Total" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/BallisticSkill" groups=["CharacteristicsTotal"]]
+margin_top = 108.0
+margin_right = 58.0
+margin_bottom = 122.0
+text = "0"
+align = 1
+
+[node name="Bonus" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/BallisticSkill"]
+margin_top = 127.0
+margin_right = 58.0
+margin_bottom = 141.0
+text = "2"
+align = 1
+
+[node name="Strength" type="VBoxContainer" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics"]
+margin_left = 225.0
+margin_right = 283.0
+margin_bottom = 141.0
+custom_constants/separation = 5
+
+[node name="Button" type="Button" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Strength" groups=["Dices_Skills"]]
+margin_right = 58.0
+margin_bottom = 20.0
+text = "S"
+
+[node name="BasicValue" type="LineEdit" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Strength" groups=["CharacteristicsBasic"]]
+margin_top = 25.0
+margin_right = 58.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 50, 40 )
+text = "033"
+align = 1
+max_length = 3
+expand_to_text_length = true
+
+[node name="Advance" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Strength"]
+margin_top = 70.0
+margin_right = 58.0
+margin_bottom = 84.0
+text = "1"
+align = 1
+
+[node name="Modifiers" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Strength"]
+margin_top = 89.0
+margin_right = 58.0
+margin_bottom = 103.0
+text = "20"
+align = 1
+
+[node name="Total" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Strength" groups=["CharacteristicsTotal"]]
+margin_top = 108.0
+margin_right = 58.0
+margin_bottom = 122.0
+text = "0"
+align = 1
+
+[node name="Bonus" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Strength"]
+margin_top = 127.0
+margin_right = 58.0
+margin_bottom = 141.0
+text = "30"
+align = 1
+
+[node name="Toughnes" type="VBoxContainer" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics"]
+margin_left = 288.0
+margin_right = 346.0
+margin_bottom = 141.0
+custom_constants/separation = 5
+
+[node name="Button" type="Button" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Toughnes" groups=["Dices_Skills"]]
+margin_right = 58.0
+margin_bottom = 20.0
+text = "T"
+
+[node name="BasicValue" type="LineEdit" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Toughnes" groups=["CharacteristicsBasic"]]
+margin_top = 25.0
+margin_right = 58.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 50, 40 )
+text = "033"
+align = 1
+max_length = 3
+
+[node name="Advance" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Toughnes"]
+margin_top = 70.0
+margin_right = 58.0
+margin_bottom = 84.0
+text = "0"
+align = 1
+
+[node name="Modifiers" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Toughnes"]
+margin_top = 89.0
+margin_right = 58.0
+margin_bottom = 103.0
+text = "0"
+align = 1
+
+[node name="Total" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Toughnes" groups=["CharacteristicsTotal"]]
+margin_top = 108.0
+margin_right = 58.0
+margin_bottom = 122.0
+text = "0"
+align = 1
+
+[node name="Bonus" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Toughnes"]
+margin_top = 127.0
+margin_right = 58.0
+margin_bottom = 141.0
+text = "0"
+align = 1
+
+[node name="Initiative" type="VBoxContainer" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics"]
+margin_left = 351.0
+margin_right = 409.0
+margin_bottom = 141.0
+custom_constants/separation = 5
+
+[node name="Button" type="Button" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Initiative" groups=["Dices_Skills"]]
+margin_right = 58.0
+margin_bottom = 20.0
+text = "I"
+
+[node name="BasicValue" type="LineEdit" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Initiative" groups=["CharacteristicsBasic"]]
+margin_top = 25.0
+margin_right = 58.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 50, 40 )
+text = "033"
+align = 1
+max_length = 3
+
+[node name="Advance" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Initiative"]
+margin_top = 70.0
+margin_right = 58.0
+margin_bottom = 84.0
+text = "0"
+align = 1
+
+[node name="Modifiers" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Initiative"]
+margin_top = 89.0
+margin_right = 58.0
+margin_bottom = 103.0
+text = "30"
+align = 1
+
+[node name="Total" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Initiative" groups=["CharacteristicsTotal"]]
+margin_top = 108.0
+margin_right = 58.0
+margin_bottom = 122.0
+text = "0"
+align = 1
+
+[node name="Bonus" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Initiative"]
+margin_top = 127.0
+margin_right = 58.0
+margin_bottom = 141.0
+text = "51"
+align = 1
+
+[node name="Agility" type="VBoxContainer" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics"]
+margin_left = 414.0
+margin_right = 472.0
+margin_bottom = 141.0
+custom_constants/separation = 5
+
+[node name="Button" type="Button" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Agility" groups=["Dices_Skills"]]
+margin_right = 58.0
+margin_bottom = 20.0
+text = "Ag"
+
+[node name="BasicValue" type="LineEdit" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Agility" groups=["CharacteristicsBasic"]]
+margin_top = 25.0
+margin_right = 58.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 50, 40 )
+text = "033"
+align = 1
+max_length = 3
+
+[node name="Advance" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Agility"]
+margin_top = 70.0
+margin_right = 58.0
+margin_bottom = 84.0
+text = "3"
+align = 1
+
+[node name="Modifiers" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Agility"]
+margin_top = 89.0
+margin_right = 58.0
+margin_bottom = 103.0
+text = "0"
+align = 1
+
+[node name="Total" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Agility" groups=["CharacteristicsTotal"]]
+margin_top = 108.0
+margin_right = 58.0
+margin_bottom = 122.0
+text = "0"
+align = 1
+
+[node name="Bonus" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Agility"]
+margin_top = 127.0
+margin_right = 58.0
+margin_bottom = 141.0
+text = "668"
+align = 1
+
+[node name="Dexterity" type="VBoxContainer" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics"]
+margin_left = 477.0
+margin_right = 535.0
+margin_bottom = 141.0
+custom_constants/separation = 5
+
+[node name="Button" type="Button" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Dexterity" groups=["Dices_Skills"]]
+margin_right = 58.0
+margin_bottom = 20.0
+text = "Dex"
+
+[node name="BasicValue" type="LineEdit" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Dexterity" groups=["CharacteristicsBasic"]]
+margin_top = 25.0
+margin_right = 58.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 50, 40 )
+text = "033"
+align = 1
+max_length = 3
+
+[node name="Advance" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Dexterity"]
+margin_top = 70.0
+margin_right = 58.0
+margin_bottom = 84.0
+text = "0"
+align = 1
+
+[node name="Modifiers" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Dexterity"]
+margin_top = 89.0
+margin_right = 58.0
+margin_bottom = 103.0
+text = "10"
+align = 1
+
+[node name="Total" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Dexterity" groups=["CharacteristicsTotal"]]
+margin_top = 108.0
+margin_right = 58.0
+margin_bottom = 122.0
+text = "0"
+align = 1
+
+[node name="Bonus" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Dexterity"]
+margin_top = 127.0
+margin_right = 58.0
+margin_bottom = 141.0
+text = "0"
+align = 1
+
+[node name="Intelligence" type="VBoxContainer" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics"]
+margin_left = 540.0
+margin_right = 598.0
+margin_bottom = 141.0
+custom_constants/separation = 5
+
+[node name="Button" type="Button" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Intelligence" groups=["Dices_Skills"]]
+margin_right = 58.0
+margin_bottom = 20.0
+text = "Int"
+
+[node name="BasicValue" type="LineEdit" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Intelligence" groups=["CharacteristicsBasic"]]
+margin_top = 25.0
+margin_right = 58.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 50, 40 )
+text = "033"
+align = 1
+max_length = 3
+
+[node name="Advance" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Intelligence"]
+margin_top = 70.0
+margin_right = 58.0
+margin_bottom = 84.0
+text = "0"
+align = 1
+
+[node name="Modifiers" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Intelligence"]
+margin_top = 89.0
+margin_right = 58.0
+margin_bottom = 103.0
+text = "0"
+align = 1
+
+[node name="Total" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Intelligence" groups=["CharacteristicsTotal"]]
+margin_top = 108.0
+margin_right = 58.0
+margin_bottom = 122.0
+text = "0"
+align = 1
+
+[node name="Bonus" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Intelligence"]
+margin_top = 127.0
+margin_right = 58.0
+margin_bottom = 141.0
+text = "0"
+align = 1
+
+[node name="Willpower" type="VBoxContainer" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics"]
+margin_left = 603.0
+margin_right = 661.0
+margin_bottom = 141.0
+custom_constants/separation = 5
+
+[node name="Button" type="Button" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Willpower" groups=["Dices_Skills"]]
+margin_right = 58.0
+margin_bottom = 20.0
+text = "WP"
+
+[node name="BasicValue" type="LineEdit" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Willpower" groups=["CharacteristicsBasic"]]
+margin_top = 25.0
+margin_right = 58.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 50, 40 )
+text = "033"
+align = 1
+max_length = 3
+
+[node name="Advance" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Willpower"]
+margin_top = 70.0
+margin_right = 58.0
+margin_bottom = 84.0
+text = "2"
+align = 1
+
+[node name="Modifiers" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Willpower"]
+margin_top = 89.0
+margin_right = 58.0
+margin_bottom = 103.0
+text = "2"
+align = 1
+
+[node name="Total" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Willpower" groups=["CharacteristicsTotal"]]
+margin_top = 108.0
+margin_right = 58.0
+margin_bottom = 122.0
+text = "0"
+align = 1
+
+[node name="Bonus" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Willpower"]
+margin_top = 127.0
+margin_right = 58.0
+margin_bottom = 141.0
+text = "0"
+align = 1
+
+[node name="Fellowship" type="VBoxContainer" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics"]
+margin_left = 666.0
+margin_right = 724.0
+margin_bottom = 141.0
+custom_constants/separation = 5
+
+[node name="Button" type="Button" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Fellowship" groups=["Dices_Skills"]]
+margin_right = 58.0
+margin_bottom = 20.0
+text = "Fell"
+
+[node name="BasicValue" type="LineEdit" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Fellowship" groups=["CharacteristicsBasic"]]
+margin_top = 25.0
+margin_right = 58.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 50, 40 )
+text = "033"
+align = 1
+max_length = 3
+
+[node name="Advance" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Fellowship"]
+margin_top = 70.0
+margin_right = 58.0
+margin_bottom = 84.0
+text = "5"
+align = 1
+
+[node name="Modifiers" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Fellowship"]
+margin_top = 89.0
+margin_right = 58.0
+margin_bottom = 103.0
+text = "0"
+align = 1
+
+[node name="Total" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Fellowship" groups=["CharacteristicsTotal"]]
+margin_top = 108.0
+margin_right = 58.0
+margin_bottom = 122.0
+text = "0"
+align = 1
+
+[node name="Bonus" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Characteristics/Fellowship"]
+margin_top = 127.0
+margin_right = 58.0
+margin_bottom = 141.0
+text = "0"
+align = 1
+
+[node name="Skills" type="HBoxContainer" parent="WindowDialog/ScrollContainer/VBoxContainer"]
+margin_top = 185.0
+margin_right = 785.0
+margin_bottom = 223.0
+
+[node name="Basic" type="VBoxContainer" parent="WindowDialog/ScrollContainer/VBoxContainer/Skills"]
+margin_right = 76.0
+margin_bottom = 38.0
+
+[node name="Label" type="Label" parent="WindowDialog/ScrollContainer/VBoxContainer/Skills/Basic"]
+margin_right = 76.0
+margin_bottom = 14.0
+size_flags_horizontal = 7
+size_flags_vertical = 5
+text = "BASIC SKILL"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="WindowDialog/ScrollContainer/VBoxContainer/Skills/Basic"]
+margin_top = 18.0
+margin_right = 76.0
+margin_bottom = 38.0
+text = "+"
+
+[node name="Advanced" type="VBoxContainer" parent="WindowDialog/ScrollContainer/VBoxContainer/Skills"]
+margin_left = 80.0
+margin_right = 80.0
+margin_bottom = 38.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+
+[node name="ResizeArea" type="Control" parent="."]
+mouse_default_cursor_shape = 12
+
+[connection signal="gui_input" from="WindowDialog/HBoxContainer/Panel" to="." method="_on_Panel_gui_input"]
+[connection signal="pressed" from="WindowDialog/HBoxContainer/Minimize" to="." method="_on_Minimize_pressed"]
+[connection signal="pressed" from="WindowDialog/HBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="text_changed" from="WindowDialog/ScrollContainer/VBoxContainer/SheetName" to="." method="_on_SheetName_text_changed"]
+[connection signal="pressed" from="WindowDialog/ScrollContainer/VBoxContainer/Skills/Basic/Button" to="." method="_on_Button_pressed"]
